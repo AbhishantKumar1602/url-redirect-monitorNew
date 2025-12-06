@@ -1,0 +1,32 @@
+name: URL Redirect Monitor
+
+on:
+  schedule:
+    # Runs every day at 12:00 AM UTC
+    - cron: '0 0 * * *'
+  workflow_dispatch:  # allows manual run
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repo
+      uses: actions/checkout@v3
+
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: 3.11
+
+    - name: Install Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install requests
+
+    - name: Run URL Monitor
+      run: python monitor_urls.py
+      env:
+        YOUR_EMAIL: ${{ secrets.YOUR_EMAIL }}
+        APP_PASSWORD: ${{ secrets.APP_PASSWORD }}
+        SEND_TO: ${{ secrets.SEND_TO }}
