@@ -25,8 +25,8 @@ def send_email(subject, message):
 # -----------------------------
 # URL MONITORING CONFIG
 # -----------------------------
-START = 1
-END = 1000
+START = 435
+END = 437
 BASE_URL = "https://ultimateskincaretips.com/landpage.php?mn="
 
 for mn in range(START, END + 1):
