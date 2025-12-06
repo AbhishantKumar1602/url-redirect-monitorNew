@@ -30,8 +30,8 @@ def send_email(subject, message):
         server.sendmail(YOUR_EMAIL, SEND_TO, msg.as_string())
 
 
-START = 435
-END = 437
+START = 900
+END = 10000
 BASE_URL = "https://ultimateskincaretips.com/landpage.php?mn="
 
 for mn in range(START, END + 1):
