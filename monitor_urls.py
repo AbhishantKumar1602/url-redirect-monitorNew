@@ -30,7 +30,7 @@ def send_email(subject, message):
         server.sendmail(YOUR_EMAIL, SEND_TO, msg.as_string())
 
 
-START = 900
+START = 3018
 END = 10000
 BASE_URL = "https://ultimateskincaretips.com/landpage.php?mn="
 
@@ -40,7 +40,7 @@ for mn in range(START, END + 1):
 
     try:
         driver.get(url)
-        time.sleep(10)
+        time.sleep(5)
         final_url = driver.current_url
 
         if final_url != url:
